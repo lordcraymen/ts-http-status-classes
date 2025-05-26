@@ -4,24 +4,19 @@
   "description": "Typescript Classes representing HTTP states",
   "exports": {
     "./http-informational": {
-      "import": "./dist/http-informational.js",
-      "require": "./dist/http-informational.cjs"
+      "import": "./dist/http-informational.js"
     },
     "./http-success": {
-      "import": "./dist/http-success.js",
-      "require": "./dist/http-success.cjs"
+      "import": "./dist/http-success.js"
     },
     "./http-redirect": {
-      "import": "./dist/http-redirect.js",
-      "require": "./dist/http-redirect.cjs"
+      "import": "./dist/http-redirect.js"
     },
     "./http-server-error": {
-      "import": "./dist/http-server-error.js",
-      "require": "./dist/http-server-error.cjs"
+      "import": "./dist/http-server-error.js"
     },
     "./http-client-error": {
-      "import": "./dist/http-server-error.js",
-      "require": "./dist/http-server-error.cjs"
+      "import": "./dist/http-server-error.js"
     }
   },
   "scripts": {

@@ -5,31 +5,37 @@
   "exports": {
     "./base": {
       "import": "./dist/base/index.js",
+      "require": "./dist/base/index.cjs",
       "types": "./dist/base/index.d.ts"
     },
     "./http-infos": {
       "import": "./dist/http-infos/http-infos.js",
+      "require": "./dist/http-infos/http-infos.cjs",
       "types": "./dist/http-infos/http-infos.d.ts"
     },
     "./http-successess": {
       "import": "./dist/http-successess/http-successes.js",
+      "require": "./dist/http-successess/http-successes.cjs",
       "types": "./dist/http-successess/http-successes.d.ts"
     },
     "./http-redirects": {
       "import": "./dist/http-redirects/http-redirects.js",
+      "require": "./dist/http-redirects/http-redirects.cjs",
       "types": "./dist/http-redirects/http-redirects.d.ts"
     },
     "./http-server-errors": {
       "import": "./dist/http-server-errors/index.js",
+      "require": "./dist/http-server-errors/index.cjs",
       "types": "./dist/http-server-errors/index.d.ts"
     },
     "./http-client-errors": {
       "import": "./dist/http-client-errors/index.js",
+      "require": "./dist/http-client-errors/index.cjs",
       "types": "./dist/http-client-errors/index.d.ts"
     }
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsup src/base/index.ts src/http-client-errors/index.ts --dts --format esm,cjs --out-dir dist",
     "test": "jest"
   },
   "repository": {
@@ -47,6 +53,7 @@
     "@types/jest": "^29.5.14",
     "jest": "^29.7.0",
     "ts-jest": "^29.3.1",
+    "tsup": "^8.5.0",
     "typescript": "^5.8.3"
   }
 }

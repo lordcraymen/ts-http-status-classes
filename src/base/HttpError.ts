@@ -29,4 +29,4 @@ function createHttpErrorClass<
   return createHttpStatusClass(Base, status, description) as unknown as HttpErrorConstructor<TInst>;
 }
 
-export { HttpError, createHttpErrorClass };
+export { HttpError, createHttpErrorClass, type HttpErrorConstructor };

@@ -1,5 +1,5 @@
-import { HttpRedirect } from "./BaseClasses/HttpRedirect";
-import { createHttpStatusClass } from "./BaseClasses/HttpStatus";
+import { HttpRedirect } from "../base/HttpRedirect";
+import { createHttpStatusClass } from "../base/HttpStatus";
 
 const HttpMultipleChoices = createHttpStatusClass(HttpRedirect, 300, "Multiple Choices");
 const HttpMovedPermanently = createHttpStatusClass(HttpRedirect, 301, "Moved Permanently");
@@ -10,7 +10,7 @@ const HttpUseProxy = createHttpStatusClass(HttpRedirect, 305, "Use Proxy");
 const HttpTemporaryRedirect = createHttpStatusClass(HttpRedirect, 307, "Temporary Redirect");
 const HttpPermanentRedirect = createHttpStatusClass(HttpRedirect, 308, "Permanent Redirect");
 
-const HttpRedirects = {
+export {
   HttpMultipleChoices,
   HttpMovedPermanently,
   HttpFound,
@@ -19,6 +19,4 @@ const HttpRedirects = {
   HttpUseProxy,
   HttpTemporaryRedirect,
   HttpPermanentRedirect
-} as const;
-
-export default HttpRedirects as any;
+};

@@ -4,22 +4,28 @@
   "description": "Typescript Classes representing HTTP states",
   "exports": {
     "./base": {
-      "import": "./dist/base/index.js"
+      "import": "./dist/base/index.js",
+      "types": "./dist/base/index.d.ts"
     },
     "./http-infos": {
-      "import": "./dist/http-infos/http-infos.js"
+      "import": "./dist/http-infos/http-infos.js",
+      "types": "./dist/http-infos/http-infos.d.ts"
     },
     "./http-successess": {
-      "import": "./dist/http-successess/http-successes.js"
+      "import": "./dist/http-successess/http-successes.js",
+      "types": "./dist/http-successess/http-successes.d.ts"
     },
     "./http-redirects": {
-      "import": "./dist/http-redirects/http-redirects.js"
+      "import": "./dist/http-redirects/http-redirects.js",
+      "types": "./dist/http-redirects/http-redirects.d.ts"
     },
     "./http-server-errors": {
-      "import": "./dist/http-server-errors/http-server-errors.js"
+      "import": "./dist/http-server-errors/index.js",
+      "types": "./dist/http-server-errors/index.d.ts"
     },
     "./http-client-errors": {
-      "import": "./dist/http-client-errors/http-client-errors.js"
+      "import": "./dist/http-client-errors/index.js",
+      "types": "./dist/http-client-errors/index.d.ts"
     }
   },
   "scripts": {

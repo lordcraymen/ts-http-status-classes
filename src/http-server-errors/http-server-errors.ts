@@ -1,50 +1,50 @@
-import { HttpServerError } from "../base/HttpServerError";
-import { createHttpErrorClass } from "../base/HttpError";
+import { HttpServerErrorStatus } from "../base/HttpServerErrorStatus";
+import { createHttpErrorStatusClass } from "../base/HttpErrorStatus";
 
-const HttpInternalServerError = createHttpErrorClass(
-  HttpServerError,
+const HttpInternalServerError = createHttpErrorStatusClass(
+  HttpServerErrorStatus,
   500,
   "Internal Server Error"
 );
-const HttpNotImplementedError = createHttpErrorClass(
-  HttpServerError,
+const HttpNotImplementedError = createHttpErrorStatusClass(
+  HttpServerErrorStatus,
   501,
   "Not Implemented"
 );
-const HttpBadGatewayError = createHttpErrorClass(HttpServerError, 502, "Bad Gateway");
-const HttpServiceUnavailableError = createHttpErrorClass(
-  HttpServerError,
+const HttpBadGatewayError = createHttpErrorStatusClass(HttpServerErrorStatus, 502, "Bad Gateway");
+const HttpServiceUnavailableError = createHttpErrorStatusClass(
+  HttpServerErrorStatus,
   503,
   "Service Unavailable"
 );
-const HttpGatewayTimeoutError = createHttpErrorClass(
-  HttpServerError,
+const HttpGatewayTimeoutError = createHttpErrorStatusClass(
+  HttpServerErrorStatus,
   504,
   "Gateway Timeout"
 );
-const HttpHttpVersionNotSupportedError = createHttpErrorClass(
-  HttpServerError,
+const HttpHttpVersionNotSupportedError = createHttpErrorStatusClass(
+  HttpServerErrorStatus,
   505,
   "HTTP Version Not Supported"
 );
-const HttpVariantAlsoNegotiatesError = createHttpErrorClass(
-  HttpServerError,
+const HttpVariantAlsoNegotiatesError = createHttpErrorStatusClass(
+  HttpServerErrorStatus,
   506,
   "Variant Also Negotiates"
 );
-const HttpInsufficientStorageError = createHttpErrorClass(
-  HttpServerError,
+const HttpInsufficientStorageError = createHttpErrorStatusClass(
+  HttpServerErrorStatus,
   507,
   "Insufficient Storage"
 );
-const HttpLoopDetectedError = createHttpErrorClass(
-  HttpServerError,
+const HttpLoopDetectedError = createHttpErrorStatusClass(
+  HttpServerErrorStatus,
   508,
   "Loop Detected"
 );
-const HttpNotExtendedError = createHttpErrorClass(HttpServerError, 510, "Not Extended");
-const HttpNetworkAuthenticationRequiredError = createHttpErrorClass(
-  HttpServerError,
+const HttpNotExtendedError = createHttpErrorStatusClass(HttpServerErrorStatus, 510, "Not Extended");
+const HttpNetworkAuthenticationRequiredError = createHttpErrorStatusClass(
+  HttpServerErrorStatus,
   511,
   "Network Authentication Required"
 );

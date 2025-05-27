@@ -1,6 +1,6 @@
-import { HttpStatus } from './HttpStatus';
+import { HttpStatus } from "./HttpStatus";
 
-class HttpSuccess extends HttpStatus {
+class HttpInfoStatus extends HttpStatus {
     constructor(
         public readonly status: number,
         public readonly description: string,
@@ -10,4 +10,5 @@ class HttpSuccess extends HttpStatus {
     }
 }
 
-export { HttpSuccess };
+
+export { HttpInfoStatus };

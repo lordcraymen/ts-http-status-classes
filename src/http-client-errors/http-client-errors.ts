@@ -1,108 +1,108 @@
-import { HttpClientError } from "../base/HttpClientError";
-import { createHttpErrorClass } from "../base/HttpError";
+import { HttpClientErrorStatus } from "../base/HttpClientErrorStatus";
+import { createHttpErrorStatusClass } from "../base/HttpErrorStatus";
 
-const HttpBadRequestError = createHttpErrorClass(HttpClientError, 400, "Bad Request");
-const HttpUnauthorizedError = createHttpErrorClass(HttpClientError, 401, "Unauthorized");
-const HttpPaymentRequiredError = createHttpErrorClass(
-  HttpClientError,
+const HttpBadRequestError = createHttpErrorStatusClass(HttpClientErrorStatus, 400, "Bad Request");
+const HttpUnauthorizedError = createHttpErrorStatusClass(HttpClientErrorStatus, 401, "Unauthorized");
+const HttpPaymentRequiredError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   402,
   "Payment Required"
 );
-const HttpForbiddenError = createHttpErrorClass(HttpClientError, 403, "Forbidden");
-const HttpNotFoundError = createHttpErrorClass(HttpClientError, 404, "Not Found");
-const HttpMethodNotAllowedError = createHttpErrorClass(
-  HttpClientError,
+const HttpForbiddenError = createHttpErrorStatusClass(HttpClientErrorStatus, 403, "Forbidden");
+const HttpNotFoundError = createHttpErrorStatusClass(HttpClientErrorStatus, 404, "Not Found");
+const HttpMethodNotAllowedError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   405,
   "Method Not Allowed"
 );
-const HttpNotAcceptableError = createHttpErrorClass(
-  HttpClientError,
+const HttpNotAcceptableError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   406,
   "Not Acceptable"
 );
-const HttpProxyAuthenticationRequiredError = createHttpErrorClass(
-  HttpClientError,
+const HttpProxyAuthenticationRequiredError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   407,
   "Proxy Authentication Required"
 );
-const HttpRequestTimeoutError = createHttpErrorClass(
-  HttpClientError,
+const HttpRequestTimeoutError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   408,
   "Request Timeout"
 );
-const HttpConflictError = createHttpErrorClass(HttpClientError, 409, "Conflict");
-const HttpGoneError = createHttpErrorClass(HttpClientError, 410, "Gone");
-const HttpLengthRequiredError = createHttpErrorClass(
-  HttpClientError,
+const HttpConflictError = createHttpErrorStatusClass(HttpClientErrorStatus, 409, "Conflict");
+const HttpGoneError = createHttpErrorStatusClass(HttpClientErrorStatus, 410, "Gone");
+const HttpLengthRequiredError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   411,
   "Length Required"
 );
-const HttpPreconditionFailedError = createHttpErrorClass(
-  HttpClientError,
+const HttpPreconditionFailedError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   412,
   "Precondition Failed"
 );
-const HttpPayloadTooLargeError = createHttpErrorClass(
-  HttpClientError,
+const HttpPayloadTooLargeError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   413,
   "Payload Too Large"
 );
-const HttpUriTooLongError = createHttpErrorClass(HttpClientError, 414, "URI Too Long");
-const HttpUnsupportedMediaTypeError = createHttpErrorClass(
-  HttpClientError,
+const HttpUriTooLongError = createHttpErrorStatusClass(HttpClientErrorStatus, 414, "URI Too Long");
+const HttpUnsupportedMediaTypeError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   415,
   "Unsupported Media Type"
 );
-const HttpRangeNotSatisfiableError = createHttpErrorClass(
-  HttpClientError,
+const HttpRangeNotSatisfiableError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   416,
   "Range Not Satisfiable"
 );
-const HttpExpectationFailedError = createHttpErrorClass(
-  HttpClientError,
+const HttpExpectationFailedError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   417,
   "Expectation Failed"
 );
-const HttpImATeapotError = createHttpErrorClass(HttpClientError, 418, "I'm a teapot");
-const HttpMisdirectedRequestError = createHttpErrorClass(
-  HttpClientError,
+const HttpImATeapotError = createHttpErrorStatusClass(HttpClientErrorStatus, 418, "I'm a teapot");
+const HttpMisdirectedRequestError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   421,
   "Misdirected Request"
 );
-const HttpUnprocessableEntityError = createHttpErrorClass(
-  HttpClientError,
+const HttpUnprocessableEntityError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   422,
   "Unprocessable Entity"
 );
-const HttpLockedError = createHttpErrorClass(HttpClientError, 423, "Locked");
-const HttpFailedDependencyError = createHttpErrorClass(
-  HttpClientError,
+const HttpLockedError = createHttpErrorStatusClass(HttpClientErrorStatus, 423, "Locked");
+const HttpFailedDependencyError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   424,
   "Failed Dependency"
 );
-const HttpTooEarlyError = createHttpErrorClass(HttpClientError, 425, "Too Early");
-const HttpUpgradeRequiredError = createHttpErrorClass(
-  HttpClientError,
+const HttpTooEarlyError = createHttpErrorStatusClass(HttpClientErrorStatus, 425, "Too Early");
+const HttpUpgradeRequiredError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   426,
   "Upgrade Required"
 );
-const HttpPreconditionRequiredError = createHttpErrorClass(
-  HttpClientError,
+const HttpPreconditionRequiredError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   428,
   "Precondition Required"
 );
-const HttpTooManyRequestsError = createHttpErrorClass(
-  HttpClientError,
+const HttpTooManyRequestsError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   429,
   "Too Many Requests"
 );
-const HttpRequestHeaderFieldsTooLargeError = createHttpErrorClass(
-  HttpClientError,
+const HttpRequestHeaderFieldsTooLargeError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   431,
   "Request Header Fields Too Large"
 );
-const HttpUnavailableForLegalReasonsError = createHttpErrorClass(
-  HttpClientError,
+const HttpUnavailableForLegalReasonsError = createHttpErrorStatusClass(
+  HttpClientErrorStatus,
   451,
   "Unavailable For Legal Reasons"
 );

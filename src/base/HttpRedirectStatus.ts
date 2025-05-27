@@ -1,6 +1,6 @@
-import { HttpError } from './HttpError';
+import { HttpStatus } from './HttpStatus';
 
-abstract class HttpClientError extends HttpError {
+class HttpRedirectStatus extends HttpStatus {
     constructor(
         public readonly status: number,
         public readonly description: string,
@@ -10,4 +10,4 @@ abstract class HttpClientError extends HttpError {
     }
 }
 
-export { HttpClientError };
+export { HttpRedirectStatus };

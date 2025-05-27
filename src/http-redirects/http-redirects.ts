@@ -1,22 +1,22 @@
-import { HttpRedirect } from "../base/HttpRedirect";
+import { HttpRedirectStatus } from "../base/HttpRedirectStatus";
 import { createHttpStatusClass } from "../base/HttpStatus";
 
-const HttpMultipleChoices = createHttpStatusClass(HttpRedirect, 300, "Multiple Choices");
-const HttpMovedPermanently = createHttpStatusClass(HttpRedirect, 301, "Moved Permanently");
-const HttpFound = createHttpStatusClass(HttpRedirect, 302, "Found");
-const HttpSeeOther = createHttpStatusClass(HttpRedirect, 303, "See Other");
-const HttpNotModified = createHttpStatusClass(HttpRedirect, 304, "Not Modified");
-const HttpUseProxy = createHttpStatusClass(HttpRedirect, 305, "Use Proxy");
-const HttpTemporaryRedirect = createHttpStatusClass(HttpRedirect, 307, "Temporary Redirect");
-const HttpPermanentRedirect = createHttpStatusClass(HttpRedirect, 308, "Permanent Redirect");
+const HttpMultipleChoicesRedirectStatus = createHttpStatusClass(HttpRedirectStatus, 300, "Multiple Choices");
+const HttpMovedPermanentlyStatus = createHttpStatusClass(HttpRedirectStatus, 301, "Moved Permanently");
+const HttpFoundStatus = createHttpStatusClass(HttpRedirectStatus, 302, "Found");
+const HttpSeeOtherStatus = createHttpStatusClass(HttpRedirectStatus, 303, "See Other");
+const HttpNotModifiedStatus = createHttpStatusClass(HttpRedirectStatus, 304, "Not Modified");
+const HttpUseProxyStatus = createHttpStatusClass(HttpRedirectStatus, 305, "Use Proxy");
+const HttpTemporaryRedirectStatus = createHttpStatusClass(HttpRedirectStatus, 307, "Temporary Redirect");
+const HttpPermanentRedirectStatus = createHttpStatusClass(HttpRedirectStatus, 308, "Permanent Redirect");
 
 export {
-  HttpMultipleChoices,
-  HttpMovedPermanently,
-  HttpFound,
-  HttpSeeOther,
-  HttpNotModified,
-  HttpUseProxy,
-  HttpTemporaryRedirect,
-  HttpPermanentRedirect
+  HttpMultipleChoicesRedirectStatus,
+  HttpMovedPermanentlyStatus,
+  HttpFoundStatus,
+  HttpSeeOtherStatus,
+  HttpNotModifiedStatus,
+  HttpUseProxyStatus,
+  HttpTemporaryRedirectStatus,
+  HttpPermanentRedirectStatus
 };

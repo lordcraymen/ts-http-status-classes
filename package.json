@@ -4,38 +4,39 @@
   "description": "Typescript Classes representing HTTP states",
   "exports": {
     "./base": {
+      "types": "./dist/base/index.d.ts",
       "import": "./dist/base/index.js",
-      "require": "./dist/base/index.cjs",
-      "types": "./dist/base/index.d.ts"
+      "require": "./dist/base/index.cjs"
     },
     "./http-infos": {
-      "import": "./dist/http-infos/http-infos.js",
-      "require": "./dist/http-infos/http-infos.cjs",
-      "types": "./dist/http-infos/http-infos.d.ts"
+      "types": "./dist/http-infos/index.d.ts",
+      "import": "./dist/http-infos/index.js",
+      "require": "./dist/http-infos/index.cjs"
     },
     "./http-successess": {
-      "import": "./dist/http-successess/http-successes.js",
-      "require": "./dist/http-successess/http-successes.cjs",
-      "types": "./dist/http-successess/http-successes.d.ts"
+      "types": "./dist/http-successess/index.d.ts",
+      "import": "./dist/http-successess/index.js",
+      "require": "./dist/http-successess/index.cjs" 
     },
     "./http-redirects": {
-      "import": "./dist/http-redirects/http-redirects.js",
-      "require": "./dist/http-redirects/http-redirects.cjs",
-      "types": "./dist/http-redirects/http-redirects.d.ts"
+      "types": "./dist/http-redirects/index.d.ts",
+      "import": "./dist/http-redirects/index.js",
+      "require": "./dist/http-redirects/index.cjs"
     },
     "./http-server-errors": {
+      "types": "./dist/http-server-errors/index.d.ts",
       "import": "./dist/http-server-errors/index.js",
-      "require": "./dist/http-server-errors/index.cjs",
-      "types": "./dist/http-server-errors/index.d.ts"
+      "require": "./dist/http-server-errors/index.cjs"
+      
     },
     "./http-client-errors": {
+      "types": "./dist/http-client-errors/index.d.ts",
       "import": "./dist/http-client-errors/index.js",
-      "require": "./dist/http-client-errors/index.cjs",
-      "types": "./dist/http-client-errors/index.d.ts"
+      "require": "./dist/http-client-errors/index.cjs"
     }
   },
   "scripts": {
-    "build": "tsup src/base/index.ts src/http-client-errors/index.ts --dts --format esm,cjs --out-dir dist",
+    "build": "tsup ./src/base/index.ts ./src/http-infos/index.ts ./src/http-successess/index.ts ./src/http-redirects/index.ts ./src/http-server-errors/index.ts ./src/http-client-errors/index.ts --format esm,cjs --dts --out-dir dist",
     "test": "jest"
   },
   "repository": {

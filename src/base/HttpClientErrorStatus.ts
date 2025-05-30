@@ -6,7 +6,7 @@ abstract class HttpClientErrorStatus extends HttpErrorStatus {
         public readonly description: string,
         public readonly message?: string
     ) {
-        super(status, description, message);
+        super(status, description);
     }
 }
 

@@ -1,11 +1,10 @@
 import { HttpStatus, createHttpStatusClass } from "./HttpStatus";
 
 abstract class HttpErrorStatus extends HttpStatus {
-  public readonly message?: string;
+  public readonly message: string | undefined;
   constructor(
     public readonly status: number,
-    public readonly description: string,
-    
+    public readonly description: string, 
   ) {
     super(status, description);
   }

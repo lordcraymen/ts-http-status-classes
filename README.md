@@ -45,13 +45,13 @@ console.log(notFound.message);    // "Not Found"
 Example import for ESM:
 
 ```typescript
-import { BadRequest } from 'ts-http-status-classes/http-client-errors';
+import { HttpBadRequestError as BadRequest } from 'ts-http-status-classes/http-client-errors';
 ```
 
 Or for CommonJS:
 
 ```javascript
-const { BadRequest } = require('ts-http-status-classes/http-client-errors');
+const { HttpBadRequestError as BadRequest } = require('ts-http-status-classes/http-client-errors');
 ```
 
 ## API
@@ -62,6 +62,25 @@ Each status class exposes at least:
 - `message` (string) — The standard status message
 
 Depending on your implementation, additional properties or methods may be available.
+
+## Extending
+
+The /base package exports abstract classes and factories to add new custom status codes
+
+```javascript
+import { HttpInfoStatus } from "../base/HttpInfoStatus";
+import { createHttpStatusClass } from "../base/HttpStatus";
+
+const HttpCustomInfo = createHttpStatusClass(HttpInfoStatus, 113, "Custom info");
+```
+or for custom errors
+
+```javascript
+import { HttpClientErrorStatus } from "../base/HttpClientErrorStatus";
+import { createHttpErrorStatusClass } from "../base/HttpErrorStatus";
+
+const HttpCustomClientError = createHttpErrorStatusClass(HttpClientErrorStatus, 460, "Custom Client Error"); 
+```
 
 ## Development
 

@@ -21,16 +21,26 @@ npm install ts-http-status-classes
 Import specific status classes from the desired module:
 
 ```typescript
-import { OK } from 'ts-http-status-classes/http-successes';
-import { NotFound } from 'ts-http-status-classes/http-client-errors';
+import { HttpOKStatus } from 'ts-http-status-classes/http-successes';
+import { HttpNotFoundError } from 'ts-http-status-classes/http-client-errors';
 
 const ok = new OK();
 console.log(ok.statusCode); // 200
 console.log(ok.message);    // "OK"
 
-const notFound = new NotFound();
+const notFound = new HttpNotFoundError("File foo.bar does not exist.");
 console.log(notFound.statusCode); // 404
 console.log(notFound.message);    // "Not Found"
+
+const notFoundFromError = HttpNotFoundError.from(new Error("File foo.bar does not exist."));
+console.log(notFoundFromError.statusCode); //404
+console.log(notFoundFromError.message);    // "Not Found"
+console.log(notFoundFromError.origin); 
+// { 
+//    type: "Error", 
+//    message: "File foo.bar does not exist.", 
+//    stack: "Error: File foo.bar does not exist.\n    at <anonymous>:1"
+//  }
 ```
 
 ## Modules

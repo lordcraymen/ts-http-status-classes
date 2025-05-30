@@ -1,12 +1,13 @@
 import { HttpStatus, createHttpStatusClass } from "./HttpStatus";
 
 abstract class HttpErrorStatus extends HttpStatus {
+  public readonly message?: string;
   constructor(
     public readonly status: number,
     public readonly description: string,
-    public readonly message?: string
+    
   ) {
-    super(status, description, message);
+    super(status, description);
   }
   static from<T extends typeof HttpErrorStatus>(this: T, error: Error): InstanceType<T> {
     return new (this as any)(error.message);
@@ -26,6 +27,9 @@ function createHttpErrorStatusClass<
   status: number,
   description: string
 ): HttpErrorStatusConstructor<TInst> {
+  if (status < 400 || status > 599) {
+    throw new Error("Http Error Status codes must be between 400 and 599.");
+  }
   return createHttpStatusClass(Base, status, description) as unknown as HttpErrorStatusConstructor<TInst>;
 }
 

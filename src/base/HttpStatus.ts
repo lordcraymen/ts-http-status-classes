@@ -1,8 +1,8 @@
 abstract class HttpStatus {
+  public readonly message: string | undefined;
   constructor(
     public readonly status: number,
     public readonly description: string,
-    public readonly message?: string
   ) {}
 }
 
@@ -16,9 +16,13 @@ function createHttpStatusClass<
   status: number,
   description: string
 ): AbstractConstructor<TInst> {
+  if(status < 100 || status > 300) {
+    throw new Error("Http Status codes must be between 100 and 300.");
+  }
   return class extends (Base as any) {
     constructor(message?: string) {
-      super(status, description, message);
+      super(status, description);
+      this.message = message;
     }
   } as unknown as AbstractConstructor<TInst>;
 }

@@ -1,13 +1,9 @@
 import { HttpStatus } from "./HttpStatus";
 
-class HttpInfoStatus extends HttpStatus {
-    constructor(
-        public readonly status: number,
-        public readonly description: string,
-        public readonly message?: string
-    ) {
-        super(status, description, message);
-    }
+abstract class HttpInfoStatus extends HttpStatus {
+    public abstract readonly status: number;
+    public abstract readonly description: string;
+    public abstract readonly message: string | undefined;
 }
 
 

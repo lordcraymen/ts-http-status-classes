@@ -1,13 +1,10 @@
 import { HttpStatus, createHttpStatusClass } from "./HttpStatus";
 
 abstract class HttpErrorStatus extends HttpStatus {
-  public readonly message: string | undefined;
-  constructor(
-    public readonly status: number,
-    public readonly description: string, 
-  ) {
-    super(status, description);
-  }
+  public abstract readonly status: number;
+  public abstract readonly description: string;
+  public abstract readonly message: string | undefined;
+  public readonly name: string = this.constructor.name;
   static from<T extends typeof HttpErrorStatus>(this: T, error: Error): InstanceType<T> {
     return new (this as any)(error.message);
   }

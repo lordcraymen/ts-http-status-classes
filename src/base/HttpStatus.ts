@@ -1,9 +1,8 @@
 abstract class HttpStatus {
-  constructor(
-    public readonly status: number,
-    public readonly description: string,
-    public readonly message?: string
-  ) {}
+  public abstract name: string;
+  public abstract readonly status: number;
+  public abstract readonly description: string;
+  public abstract readonly message: string | undefined;
 }
 
 type AbstractConstructor<T = any> = abstract new (...args: any[]) => T;
@@ -17,8 +16,12 @@ function createHttpStatusClass<
   description: string
 ): AbstractConstructor<TInst> {
   return class extends (Base as any) {
+    public static readonly status = status;
+    public static readonly description = description;
     constructor(message?: string) {
-      super(status, description, message);
+      super();
+      this.name = Base.name;
+      this.message = message;
     }
   } as unknown as AbstractConstructor<TInst>;
 }

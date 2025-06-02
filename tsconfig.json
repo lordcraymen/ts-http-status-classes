@@ -6,6 +6,8 @@
     "module": "NodeNext",
     "target": "ES2020",
     "moduleResolution": "nodenext",
+    "isolatedModules": true,
+    "strict": true,
   },
   "include": [
     "src/**/*",

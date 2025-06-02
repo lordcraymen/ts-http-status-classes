@@ -12,8 +12,8 @@
       "require": "./dist/http-infos/index.js"
     },
     "./http-successess": {
-      "import": "./dist/http-successess/index.mjs",
-      "require": "./dist/http-successess/index.js" 
+      "import": "./dist/http-successes/index.mjs",
+      "require": "./dist/http-successes/index.js" 
     },
     "./http-redirects": {
       "import": "./dist/http-redirects/index.mjs",

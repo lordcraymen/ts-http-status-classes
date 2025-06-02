@@ -11,8 +11,8 @@ export default defineConfig({
     "./src/http-client-errors/index.ts",
   ],
   format: ["cjs", "esm"],
-  dts: true,
   splitting: false,
+  dts: false,     // disable dts in tsup
   outDir: "dist",
-  clean: true
+  clean: true,
 });

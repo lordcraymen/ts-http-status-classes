@@ -29,7 +29,7 @@
     }
   },
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && tsc --emitDeclarationOnly --declaration --declarationMap false --outDir dist",
     "test": "jest"
   },
   "repository": {

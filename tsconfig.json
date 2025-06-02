@@ -1,13 +1,11 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
     "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
     "module": "NodeNext",
     "target": "ES2020",
-    "moduleResolution": "nodenext",
-    "isolatedModules": true,
-    "strict": true,
+    "rootDir": "./src"
   },
   "include": [
     "src/**/*",

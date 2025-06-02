@@ -13,7 +13,7 @@
     },
     "./http-successess": {
       "import": "./dist/http-successes/index.mjs",
-      "require": "./dist/http-successes/index.js" 
+      "require": "./dist/http-successes/index.js"
     },
     "./http-redirects": {
       "import": "./dist/http-redirects/index.mjs",
@@ -22,7 +22,6 @@
     "./http-server-errors": {
       "import": "./dist/http-server-errors/index.mjs",
       "require": "./dist/http-server-errors/index.js"
-      
     },
     "./http-client-errors": {
       "import": "./dist/http-client-errors/index.mjs",

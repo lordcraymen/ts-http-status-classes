@@ -2,7 +2,7 @@
 import typescript from '@rollup/plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import dts from 'rollup-plugin-dts';
+import dtsPlugin from 'rollup-plugin-dts';
 import type { RollupOptions, ModuleFormat } from 'rollup';
 
 interface EntryConfig {
@@ -24,7 +24,7 @@ function createConfig(entry: EntryConfig, format: ModuleFormat, extension: strin
     input: entry.input,
     output: {
       file: `dist/${entry.output}/index.${extension}`,
-      format: format, // Now TypeScript will catch invalid formats!
+      format: format,
       exports: 'named'
     },
     plugins: [
@@ -49,14 +49,14 @@ function createDtsConfig(entry: EntryConfig): RollupOptions {
       file: `dist/${entry.output}/index.d.ts`,
       format: 'esm'
     },
-    plugins: [dts()],
+    plugins: [dtsPlugin()], // Changed from dts() to dtsPlugin()
     external: []
   };
 }
 
 const configs: RollupOptions[] = [
   ...entries.flatMap(entry => [
-    createConfig(entry, 'esm', 'mjs'),  // TypeScript will validate this is correct
+    createConfig(entry, 'esm', 'mjs'),
     createConfig(entry, 'cjs', 'js'),
     createDtsConfig(entry)
   ])

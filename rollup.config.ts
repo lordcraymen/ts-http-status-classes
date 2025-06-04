@@ -1,10 +1,16 @@
-// rollup.config.js
+// rollup.config.ts
 import typescript from '@rollup/plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import dts from 'rollup-plugin-dts';
+import type { RollupOptions, ModuleFormat } from 'rollup';
 
-const entries = [
+interface EntryConfig {
+  input: string;
+  output: string;
+}
+
+const entries: EntryConfig[] = [
   { input: 'src/base/index.ts', output: 'base' },
   { input: 'src/http-infos/index.ts', output: 'http-infos' },
   { input: 'src/http-successes/index.ts', output: 'http-successes' },
@@ -13,12 +19,12 @@ const entries = [
   { input: 'src/http-client-errors/index.ts', output: 'http-client-errors' }
 ];
 
-function createConfig(entry, format, extension) {
+function createConfig(entry: EntryConfig, format: ModuleFormat, extension: string): RollupOptions {
   return {
     input: entry.input,
     output: {
       file: `dist/${entry.output}/index.${extension}`,
-      format: format,
+      format: format, // Now TypeScript will catch invalid formats!
       exports: 'named'
     },
     plugins: [
@@ -28,17 +34,32 @@ function createConfig(entry, format, extension) {
         tsconfig: './tsconfig.json',
         declaration: false,
         declarationMap: false,
-        target: format === 'esm' ? 'ES2020' : 'ES5', // Different targets
-        module: format === 'esm' ? 'ESNext' : 'CommonJS' // Key difference
+        target: format === 'esm' ? 'ES2020' : 'ES5',
+        module: format === 'esm' ? 'ESNext' : 'CommonJS'
       })
     ],
     external: []
   };
 }
 
-export default [
+function createDtsConfig(entry: EntryConfig): RollupOptions {
+  return {
+    input: entry.input,
+    output: {
+      file: `dist/${entry.output}/index.d.ts`,
+      format: 'esm'
+    },
+    plugins: [dts()],
+    external: []
+  };
+}
+
+const configs: RollupOptions[] = [
   ...entries.flatMap(entry => [
-    createConfig(entry, 'esm', 'mjs'),  // Use 'es' instead of 'esm'
+    createConfig(entry, 'esm', 'mjs'),  // TypeScript will validate this is correct
     createConfig(entry, 'cjs', 'js'),
+    createDtsConfig(entry)
   ])
 ];
+
+export default configs;

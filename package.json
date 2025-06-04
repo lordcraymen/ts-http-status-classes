@@ -29,7 +29,7 @@
     }
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "test": "jest"
   },
   "repository": {

@@ -2,7 +2,7 @@
 import typescript from '@rollup/plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import dtsPlugin from 'rollup-plugin-dts';
+import { dts } from 'rollup-plugin-dts';
 import type { RollupOptions, ModuleFormat } from 'rollup';
 
 interface EntryConfig {
@@ -35,7 +35,7 @@ function createConfig(entry: EntryConfig, format: ModuleFormat, extension: strin
         declaration: false,
         declarationMap: false,
         target: format === 'esm' ? 'ES2020' : 'ES5',
-        module: format === 'esm' ? 'ESNext' : 'CommonJS'
+        module: format === 'esm' ? 'esnext' : 'commonjs'
       })
     ],
     external: []
@@ -49,7 +49,7 @@ function createDtsConfig(entry: EntryConfig): RollupOptions {
       file: `dist/${entry.output}/index.d.ts`,
       format: 'esm'
     },
-    plugins: [dtsPlugin()], // Changed from dts() to dtsPlugin()
+    plugins: [dts], // Changed from dts() to dtsPlugin()
     external: []
   };
 }

@@ -29,7 +29,7 @@
     }
   },
   "scripts": {
-    "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript --bundleConfigAsCjs",
+   "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript={tsconfig:'tsconfig.rollup.json'} --bundleConfigAsCjs",
     "test": "jest"
   },
   "repository": {

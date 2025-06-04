@@ -28,7 +28,10 @@ function createConfig(entry: EntryConfig, format: ModuleFormat, extension: strin
       exports: 'named'
     },
     plugins: [
-      resolve(),
+      resolve({
+        extensions: ['.ts', '.js', '.json'], // Add this
+        preferBuiltins: false
+      }),
       commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
@@ -49,7 +52,7 @@ function createDtsConfig(entry: EntryConfig): RollupOptions {
       file: `dist/${entry.output}/index.d.ts`,
       format: 'esm'
     },
-    plugins: [dts], // Changed from dts() to dtsPlugin()
+    plugins: [dts],
     external: []
   };
 }

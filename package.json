@@ -4,32 +4,32 @@
   "description": "Typescript Classes representing HTTP states",
   "exports": {
     "./base": {
-      "import": "./dist/base/index.mjs",
-      "require": "./dist/base/index.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     },
     "./http-infos": {
-      "import": "./dist/http-infos/index.mjs",
-      "require": "./dist/http-infos/index.js"
+      "import": "./dist/http-infos.mjs",
+      "require": "./dist/http-infos.js"
     },
     "./http-successess": {
-      "import": "./dist/http-successes/index.mjs",
-      "require": "./dist/http-successes/index.js"
+      "import": "./dist/http-successes.mjs",
+      "require": "./dist/http-successes.js"
     },
     "./http-redirects": {
-      "import": "./dist/http-redirects/index.mjs",
-      "require": "./dist/http-redirects/index.js"
+      "import": "./dist/http-redirects.mjs",
+      "require": "./dist/http-redirects.js"
     },
     "./http-server-errors": {
-      "import": "./dist/http-server-errors/index.mjs",
-      "require": "./dist/http-server-errors/index.js"
+      "import": "./dist/http-server-errors.mjs",
+      "require": "./dist/http-server-errors.js"
     },
     "./http-client-errors": {
-      "import": "./dist/http-client-errors/index.mjs",
-      "require": "./dist/http-client-errors/index.js"
+      "import": "./dist/http-client-errors.mjs",
+      "require": "./dist/http-client-errors.js"
     }
   },
   "scripts": {
-   "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript={tsconfig:'tsconfig.rollup.json'} --bundleConfigAsCjs",
+    "build": "unbuild",
     "test": "jest"
   },
   "repository": {
@@ -53,6 +53,7 @@
     "rollup-plugin-dts": "^6.2.1",
     "ts-jest": "^29.3.1",
     "tslib": "^2.8.1",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "unbuild": "^3.5.0"
   }
 }

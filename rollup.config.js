@@ -38,7 +38,7 @@ function createConfig(entry, format, extension) {
 
 export default [
   ...entries.flatMap(entry => [
-    createConfig(entry, 'es', 'mjs'),  // Use 'es' instead of 'esm'
+    createConfig(entry, 'esm', 'mjs'),  // Use 'es' instead of 'esm'
     createConfig(entry, 'cjs', 'js'),
   ])
 ];

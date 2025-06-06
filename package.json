@@ -34,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "@lordcraymen/ts-http-status-classes"
+    "url": "https://github.com/lordcraymen/ts-http-status-classes.git"
   },
   "keywords": [
     "http",
@@ -44,8 +44,12 @@
   "author": "Florian \"lordcraymen\" Patzke",
   "license": "MIT",
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^12.0.1",
     "@types/jest": "^29.5.14",
     "jest": "^29.7.0",
+    "semantic-release": "^24.2.5",
     "ts-jest": "^29.3.1",
     "tslib": "^2.8.1",
     "typescript": "^5.8.3",

@@ -1,6 +1,7 @@
 
 # ts-http-status-classes
 
+
 A modular TypeScript library providing HTTP status code classes, organized by category (Informational, Success, Redirection, Client Error, Server Error).
 
 ## Features

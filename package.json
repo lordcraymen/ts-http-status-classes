@@ -1,6 +1,6 @@
 {
   "name": "ts-http-status-classes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Typescript Classes representing HTTP states",
   "exports": {
     "./base": {
@@ -28,6 +28,9 @@
       "require": "./dist/http-client-errors/index.cjs"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "unbuild",
     "test": "jest",

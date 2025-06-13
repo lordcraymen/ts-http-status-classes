@@ -1,6 +1,6 @@
 {
   "name": "ts-http-status-classes",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Typescript Classes representing HTTP states",
   "exports": {
     "./base": {
